@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pets</string>
+    <string name="button_save_pet">Save</string>
+
+ 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="layout_error_message">This field cannot be empty</string>
+
+</resources>

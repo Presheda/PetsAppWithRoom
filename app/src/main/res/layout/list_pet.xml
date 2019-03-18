@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout >
+
+    <data >
+        <variable
+            name="petHolder"
+            type="com.precious.pets.PetHolder" />
+        <variable
+            name="IRecyclerView"
+            type="com.precious.pets.IRecyclerViewOnClick" />
+
+    </data>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:onClick="@{()-> IRecyclerView.Onclicked(petHolder)}"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/textview_pet_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@={petHolder.petName}"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview_pet_breed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@={petHolder.petBreed}"
+        android:textAppearance="@style/pets_info"
+        app:layout_constraintStart_toStartOf="@+id/textview_pet_name"
+        app:layout_constraintTop_toBottomOf="@+id/textview_pet_name" />
+
+    <TextView
+        android:id="@+id/textview_pet_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:setSex="@{petHolder.petSex}"
+        android:text="Precious"
+        android:textAppearance="@style/pets_info"
+        app:layout_constraintBottom_toBottomOf="@+id/textview_pet_breed"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+
+
+    <TextView
+        android:id="@+id/textview_pet_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{String.valueOf(petHolder.petAge)}"
+        android:textAppearance="@style/pets_info"
+        app:layout_constraintBottom_toBottomOf="@+id/textview_pet_sex"
+        app:layout_constraintEnd_toStartOf="@+id/years" />
+
+    <TextView
+        android:id="@+id/years"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="yrs"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_pet_name" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="166dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.39"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+
+</layout>

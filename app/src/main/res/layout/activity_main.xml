@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+
+    <data>
+
+        <import type="java.util.List" />
+        <import type="com.precious.pets.PetHolder"/>
+
+        <variable
+            name="petList"
+            type="List&lt;PetHolder>" />
+    </data>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.an+droid.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/frame_layout"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/editPetFrameLayoutId"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="match_parent"/>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        app:setPetList="@{petList}"
+
+        android:focusable="true"
+        android:id="@+id/recyclerView_pet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        tools:listitem="@layout/list_pet" />
+
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_button_new_pet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_add_black_24dp"
+        app:backgroundTint="@color/colorPrimary" />
+
+
+
+</FrameLayout>
+
+
+
+
+</layout>
